@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Seduc - Login</title>
+
+    <link rel="icon" href="img/livro.ico" />
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/alt/AdminLTE.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+   <div class="container">
+    <div class = "wrapper">
+        <div class = "title">
+            <span>Faça Seu Login</span>
+        </div>
+        <form action = "Dashboard.html">
+            <div class="row">
+                <div class = "i"><i class = "fa-solid fa-user" style = "color: white;"></i></div>
+                <input type = "text" placeholder = "Email" id = "email" required>
+            </div>
+            <div class="row">
+                <div class = "i"><i class="fa-solid fa-lock" style="color: white;"></i></div>
+                <input type = "password" placeholder = "Senha" id = "senha" required>
+            </div>
+            <div class="row button">
+                <div class="pass"><p>Esqueceu a Senha?</p></div>    
+            <input type = "submit" value = "Login" onclick="logar(); return false">
+            </div>
+        </form>
+    </div>
+</div>
+<body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!--bootstap incos-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+     <link rel="icon" href="img/livro.ico" />
+
+    <link rel="stylesheet" href="/css/emprestimo.css">
+    <link rel="stylesheet" href="/css/crud.css">
+    <link rel="stylesheet" href="/css/button.css">
+    <link rel="stylesheet" href="/css/records.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="icon" href="img/livro.ico" />
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/alt/AdminLTE.min.css">
+
+    <title>Biblioteca Escolar - Empréstimos</title>
+</head>
+
+
+<body>
+    <div class="corpo">
+        <!-- Navbar -->
+        <nav>
+            <div class="menu-sid">
+                <i class="bi bi-list sidebar-toggle"></i>
+             </div><!-- menu-sid -->
+
+            <div class="div-logo-name">
+                <span class="logo_name">Biblioteca</span>
+            </div><!--logo-name-->
+
+            <div class="menu-items">
+                <ul class="nav-links">
+                    <li><a href="Dashboard.html">
+                            <i class="bi bi-house"></i>
+                            <span class="link-name">Dashboard</span>
+                        </a></li>
+                    <li><a href="Alunos.html">
+                            <i class="bi bi-person-vcard"></i>
+                                <span class="link-name">Alunos</span>
+                            </a></li>
+                    <li><a href="Funcionarios.html">
+                            <i class="bi bi-person-vcard"></i>
+                                <span class="link-name">Funcionários</span>
+                            </a></li>
+                    <li><a href="Livros.html">
+                            <i class="bi bi-clipboard-data"></i>
+                            <span class="link-name">Livros</span>
+                        </a></li>
+                    <li><a href="Emprestimos.html">
+                        <i class="bi bi-person-workspace"></i>
+                            <span class="link-name">Empréstimos</span>
+                        </a></li>
+            </ul><!--nav-links-->
+            </div><!--menu-items-->
+        </nav>
+
+        <section class="dashboard">
+            <div class="top">
+                <i class="bi bi-list sidebar-toggle2"></i>
+
+                <div class="logo-name">
+                    <h1 class="wda-logo">Biblioteca Escolar</h1>
+                </div><!--logo-name-->
+
+                   <!-- Menu-DropDown -->
+
+                   <div class="actionimg">
+                    <div class="profile" onclick="menuToggle();">
+                        <img src="img/avatar5.png" alt="">
+                    </div>
+
+                    <div class="menu">
+                        <h3>
+                            Antônio Carlos
+                        </h3>
+                        <ul>
+                            <li>
+                                <span class="material-icons icons-size"><i class="bi bi-person"></i></span>
+                                <a href="#">Perfil</a>
+                            </li>
+                            <li>
+                                <span class="material-icons icons-size"><i class="bi bi-question-circle"></i></span>
+                                <a href="#">Ajuda</a>
+                            </li>
+                            <li>
+                                <span class="material-icons icons-size"><i class="bi bi-gear"></i></span>
+                                <a href="#">Configurações</a>
+                            </li>
+                            <li>
+                                <span class="material-icons icons-size"><i class="bi bi-box-arrow-right"></i></span>
+                                <a href="index.html">Saida</a>
+                            </li>
+                        </ul>
+                    </div><!--menu-->
+                </div><!--actionimg-->
+            </div><!--top-->
+
+            <div class="corpo-da-pag">
+                <div class="scroll">
+                    <div class="activity">
+                        <div class="overview">
+                            <div class="title">
+                                <i class="bi bi-person-rolodex"></i>
+                                <span class="text">Emprestimos</span>
+                            </div><!--title-->
+                            <div class="wdaSever" style=" white-space: nowrap;">
+                                <li class="breadcrumb-item"><a
+                                        style="text-decoration: none !important; color: black; font-size: 12px; margin-left: 2%;"
+                                        href="Dashboard.html">Biblioteca Escolar</a></li>
+                                <li class="breadcrumb-item"><a
+                                        style="text-decoration: none !important; color: rgb(99, 99, 99); font-size: 12px; margin-left: 2%;"
+                                        href="Emprestimos.html">&nbsp> Empréstimos</a></li>
+                            </div>
+                        </div><!--overview-->
+                        <div id="lupa-grid">    
+                            <button type="button" class="button blue mobile" id="cadastrarCliente">Novo Empréstimo</button>
+                        </div>  
+                        </br> 
+                           
+                            <table id="tableEmprestimo" class="records">
+                                <thead>
+                                    <tr>
+                                        <th>Código Empréstimo</th>
+                                        <th>Nome do Usuario</th>
+                                        <th>Livro alugado</th>
+                                        <th>Data do Empréstimo</th>
+                                        <th>Data da Devolução</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                <!-- MODAL APAGAR -->
+            <div class = "modal" id="modal">
+                <div class = "modal-content">
+                    <header class="modal-header">
+                        <h2>Novo Emprestimo</h2>
+                        <span class="modal-close" id="modalClose">&#10006;</span>
+                    </header>
+                    <form id="form" class="modal-form">
+                    <label for = "m-livro-alug">Livro:</label></br>
+                    <select id = "m-livro-alug">
+                    <option value="">Selecione o Livro:</option>
+                    </select></br>
+
+                    <label for = "m-usuario">Usuário</label></br>
+                    <select id = "m-usuario">
+                        <option value="">Selecione o Usuário:</option>
+                    </select></br>
+
+                    <label for = "m-data-aluguel">Data do Empréstimo</label>
+                    <input id = "m-data-aluguel" type = "date" required/>
+
+                    <label for = "m-prev-data">Previsão de Devolução</label>
+                    <input id = "m-prev-data" type = "date" required/>
+            
+                    </form>
+                    <footer class="modal-footer">
+                        <button id="salvar" class="button green">Salvar</button>
+                        <button id="cancelar" class="button blue"><a href="Emprestimos.html">Cancelar</a></button>
+                    </footer>
+
+                </div>
+            </div>
+                    </div><!--activity-->
+                </div><!--scroll-->
+            </div><!--corpo-da-pag-->
+
+        </section>
+    </div> <!--corpo-->
+</body>
+
+<script src="js/main.js"></script>
+<script src="js/crud.js"></script>
+
+</html>

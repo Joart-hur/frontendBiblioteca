@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar - Livros</title>
+
+    <link rel="icon" href="img/livro.ico" />
+    
+    <link rel="stylesheet" href="/css/emprestimo.css">
+    <link rel="stylesheet" href="/css/crud.css">
+    <link rel="stylesheet" href="/css/button.css">
+    <link rel="stylesheet" href="/css/records.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/alt/AdminLTE.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+    <div class="corpo">
+        <!-- Navbar -->
+        <nav>
+            <div class="menu-sid">
+                <i class="bi bi-list sidebar-toggle"></i>
+             </div><!-- menu-sid -->
+
+            <div class="div-logo-name">
+                <span class="logo_name">Biblioteca</span>
+            </div><!--logo-name-->
+
+            <div class="menu-items">
+                <ul class="nav-links">
+                    <li><a href="Dashboard.html">
+                            <i class="bi bi-house"></i>
+                            <span class="link-name">Dashboard</span>
+                        </a></li>
+                    <li><a href="Alunos.html">
+                            <i class="bi bi-person-vcard"></i>
+                                <span class="link-name">Alunos</span>
+                            </a></li>
+                    <li><a href="Funcionarios.html">
+                            <i class="bi bi-person-vcard"></i>
+                                <span class="link-name">Funcionários</span>
+                            </a></li>
+                    <li><a href="Livros.html">
+                            <i class="bi bi-clipboard-data"></i>
+                            <span class="link-name">Livros</span>
+                        </a></li>
+                    <li><a href="Emprestimos.html">
+                        <i class="bi bi-person-workspace"></i>
+                            <span class="link-name">Empréstimos</span>
+                        </a></li>
+            </ul><!--nav-links-->
+            </div><!--menu-items-->
+        </nav>
+    
+
+        <section class="dashboard">
+            <div class="top">
+                <i class="bi bi-list sidebar-toggle2"></i>
+
+                <div class="logo-name">
+                    <h1 class="seduc-logo">Biblioteca Escolar</h1>
+                </div><!--logo-name-->
+
+                   <!-- Menu-DropDown -->
+
+                   <div class="actionimg">
+                    <div class="profile" onclick="menuToggle();">
+                        <img src="img/avatar5.png" alt="">
+                    </div>
+
+                    <div class="menu">
+                        <h3>
+                            Antônio Carlos
+                        </h3>
+                        <ul>
+                            <li>
+                                <span class="material-icons icons-size"><i class="bi bi-person"></i></span>
+                                <a href="#">Perfil</a>
+                            </li>
+                            <li>
+                                <span class="material-icons icons-size"><i class="bi bi-question-circle"></i></span>
+                                <a href="#">Ajuda</a>
+                            </li>
+                            <li>
+                                <span class="material-icons icons-size"><i class="bi bi-gear"></i></span>
+                                <a href="#">Configurações</a>
+                            </li>
+                            <li>
+                                <span class="material-icons icons-size"><i class="bi bi-box-arrow-right"></i></span>
+                                <a href="index.html">Saida</a>
+                            </li>
+                        </ul>
+                    </div><!--menu-->
+                </div><!--actionimg-->
+            </div><!--top-->
+
+            <div class="corpo-da-pag">
+                <div class="scroll">
+                    <div class="activity">
+                        <div class="overview">
+                            <div class="title">
+                                <i class="bi bi-person-rolodex"></i>
+                                <span class="text">Livros</span>
+                            </div><!--title-->
+                            <div class="seducSever" style=" white-space: nowrap;">
+                                <li class="breadcrumb-item"><a
+                                        style="text-decoration: none !important; color: black; font-size: 12px; margin-left: 2%;"
+                                        href="Dashboard.html">Biblioteca Escolar</a></li>
+                                <li class="breadcrumb-item"><a
+                                        style="text-decoration: none !important; color: rgb(99, 99, 99); font-size: 12px; margin-left: 2%;"
+                                        href="Livros.html">&nbsp> Livros</a></li>
+                            </div>
+                        </div><!--overview-->
+                        <div id="lupa-grid">    
+                            <button type="button" class="button blue mobile" id="cadastrarLivro">Cadastrar Novo Livro</button>
+                        </div>  
+                        </br> 
+                           
+                            <table id="tableLivro" class="records">
+                                <thead>
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Nome</th>
+                                        <th>Categoria</th>
+                                        <th>Editora</th>
+                                        <th>Autor</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                    
+                                </tbody>
+                            </table>
+                            <!-- MODAL APAGAR -->
+                            <div class="modal" id="modal2">
+                                <div class="modal-content">
+                                    <header class="modal-header">
+                                        <h2>Excluir Livro</h2>
+                                        <span class="modal-close" id="modalClose2">&#10006;</span>
+                                    </header>
+                                    <div id='avisoDelete'>
+                                        <!-- aviso de delete -->
+                                    </div>
+                                    <footer class="modal-footer">
+                                        <button id="apagar" class="button red">Apagar</button>
+                                        <button id="cancelar2" class="button blue">Cancelar</button>
+                                    </footer>
+                                </div>
+                            </div>
+                    
+                            <!-- MODAL CRIAR E EDITAR -->
+                            <div class="modal" id="modal">
+                                <div class="modal-content">
+                                    <header class="modal-header">
+                                        <h2>Novo Livro</h2>
+                                        <span class="modal-close" id="modalClose">&#10006;</span>
+                                    </header>
+                                    <form id="form" class="modal-form">
+                                        <input type="number" id="codigo" class="modal-field" placeholder="Código do Livro" required>
+                                        <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Livro" required>
+                                        <input type="date" id="ano" class="modal-field" placeholder="Ano Publicação do Livro" required>
+                                        <input type="text" id="categoria" class="modal-field" placeholder="Categoria do Livro" required>
+                                        <input type="text" id="editora" class="modal-field" placeholder="Editora do Livro" required>
+                                        <input type="text" id="isbn" class="modal-field" placeholder="ISBN do Livro" required>
+                                        <input type="text" id="autor" class="modal-field" placeholder="Autor do Livro" required>
+                                    </form>
+                                    <footer class="modal-footer">
+                                        <button id="salvar" class="button green">Salvar</button>
+                                        <button id="cancelar" class="button blue">Cancelar</button>
+                                    </footer>
+                                </div>
+                            </div>
+
+                    </div><!--activity-->
+                </div><!--scroll-->
+            </div><!--corpo-da-pag-->
+
+        </section>
+    </div> <!--corpo-->
+                            
+                        
+
+</body>
+</html>
