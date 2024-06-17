@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar</title>
 
-     <!--bootstap incos-->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
-     <link rel="icon" href="/img/book.ico" />
+    <link rel="icon" href="/img/book.ico" />
 
     <link rel="stylesheet" href="/css/emprestimo.css">
     <link rel="stylesheet" href="/css/crud.css">
@@ -17,18 +14,15 @@
     <link rel="stylesheet" href="/css/modal.css">
     <link rel="stylesheet" href="/css/main.css">
 
-    <link rel="icon" href="img/livro.ico" />
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/bower_components/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="/css/alt/AdminLTE.min.css">
+    <link rel="stylesheet" href="/css/main.css">
 
-    <title>Biblioteca Escolar - Empréstimos</title>
 </head>
-
-
 <body>
     <div class="corpo">
         <!-- Navbar -->
@@ -57,8 +51,8 @@
                             </a></li>
                     <li><a href="Editoras.html">
                             <i class="bi bi-clipboard-data"></i>
-                                <span class="link-name">Editoras</span>
-                            </a></li>
+                            <span class="link-name">Editoras</span>
+                        </a></li>
                     <li><a href="Livros.html">
                             <i class="bi bi-clipboard-data"></i>
                                 <span class="link-name">Livros</span>
@@ -71,16 +65,15 @@
             </div><!--menu-items-->
         </nav>
 
+
         <section class="dashboard">
             <div class="top">
                 <i class="bi bi-list sidebar-toggle2"></i>
 
                 <div class="logo-name">
-                    <h1 class="wda-logo">Biblioteca Escolar</h1>
+                    <h1 class="seduc-logo">Biblioteca Escolar</h1>
                 </div><!--logo-name-->
-
                    <!-- Menu-DropDown -->
-
                    <div class="actionimg">
                     <div class="profile" onclick="menuToggle();">
                         <img src="/img/avatar5.png" alt="">
@@ -118,76 +111,85 @@
                         <div class="overview">
                             <div class="title">
                                 <i class="bi bi-person-rolodex"></i>
-                                <span class="text">Emprestimos</span>
+                                <span class="text">Editoras</span>
                             </div><!--title-->
-                            <div class="wdaSever" style=" white-space: nowrap;">
+                            <div class="seducSever" style=" white-space: nowrap;">
                                 <li class="breadcrumb-item"><a
                                         style="text-decoration: none !important; color: black; font-size: 12px; margin-left: 2%;"
-                                        href="Dashboard.html">Biblioteca Escolar</a></li>
+                                        href="Dahsboard.html">Biblioteca Escolar</a></li>
                                 <li class="breadcrumb-item"><a
                                         style="text-decoration: none !important; color: rgb(99, 99, 99); font-size: 12px; margin-left: 2%;"
-                                        href="Emprestimos.html">&nbsp> Empréstimos</a></li>
+                                        href="Editoras.html">&nbsp> Editoras</a></li>
                             </div>
                         </div><!--overview-->
+                        
                         <div id="lupa-grid">    
-                            <button type="button" class="button blue mobile" id="cadastrarEmprestimo">Novo Empréstimo</button>
+                            <button type="button" class="button blue mobile" id="cadastrarEditora">Cadastrar Nova Editora</button>
                         </div>  
                         </br> 
                            
-                            <table id="tableEmprestimo" class="records">
+                            <table id="tableEditora" class="records">
                                 <thead>
                                     <tr>
-                                        <th>Código Empréstimo</th>
-                                        <th>Nome do Usuario</th>
-                                        <th>Livro alugado</th>
-                                        <th>Data do Empréstimo</th>
-                                        <th>Data da Devolução</th>
+                                        <th>Nome</th>
+                                        <th>Gerente</th>
+                                        <th>E-mail</th>
+                                        <th>Celular</th>
+                                        <th>Telefone</th>
                                         <th>Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                    
                                 </tbody>
                             </table>
-                <!-- MODAL APAGAR -->
-            <div class = "modal" id="modal">
-                <div class = "modal-content">
-                    <header class="modal-header">
-                        <h2>Novo Empréstimo</h2>
-                        <span class="modal-close" id="modalClose">&#10006;</span>
-                    </header>
-                    <form id="form" class="modal-form">
-                    <label for = "m-livro-alug">Livro:</label></br>
-                    <select id = "m-livro-alug">
-                    <option value="">Selecione o Livro:</option>
-                    </select></br>
-
-                    <label for = "m-usuario">Usuário</label></br>
-                    <select id = "m-usuario">
-                        <option value="">Selecione o Usuário:</option>
-                    </select></br>
-
-                    <label for = "m-data-aluguel">Data do Empréstimo</label>
-                    <input id = "m-data-aluguel" type = "date" required/>
-
-                    <label for = "m-prev-data">Previsão de Devolução</label>
-                    <input id = "m-prev-data" type = "date" required/>
-            
-                    </form>
-                    <footer class="modal-footer">
-                        <button id="salvar" class="button green">Salvar</button>
-                        <button id="cancelar" class="button blue"><a href="Emprestimos.html">Cancelar</a></button>
-                    </footer>
-
-                </div>
-            </div>
+                            <!-- MODAL APAGAR -->
+                            <div class="modal" id="modal2">
+                                <div class="modal-content">
+                                    <header class="modal-header">
+                                        <h2>Excluir Editora</h2>
+                                        <span class="modal-close" id="modalClose2">&#10006;</span>
+                                    </header>
+                                    <div id='avisoDelete'>
+                                        <!-- aviso de delete -->
+                                    </div>
+                                    <footer class="modal-footer">
+                                        <button id="apagar" class="button red">Apagar</button>
+                                        <button id="cancelar2" class="button blue">Cancelar</button>
+                                    </footer>
+                                </div>
+                            </div>
+                    
+                            <!-- MODAL CRIAR E EDITAR -->
+                            <div class="modal" id="modal">
+                                <div class="modal-content">
+                                    <header class="modal-header">
+                                        <h2>Nova Editora</h2>
+                                        <span class="modal-close" id="modalClose">&#10006;</span>
+                                    </header>
+                                    <form id="form" class="modal-form">
+                                        <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome da Editora"required>
+                                        <input type="text" id="gerente" class="modal-field" placeholder="Nome do Gerente" required>
+                                        <input type="email" id="email" class="modal-field" placeholder="E-mail da Editora" required>
+                                        <input type="text" id="endereco" class="modal-field" placeholder="Endereço da Editora" required>
+                                        <input type="text" id="celular" class="modal-field" placeholder="Celular da Editora" required>
+                                        <input type="text" id="telefone" class="modal-field" placeholder="Telefone da Editora" required>
+                                    </form>                                             
+                                    <footer class="modal-footer">
+                                        <button id="salvar" class="button green">Salvar</button>
+                                        <button id="cancelar" class="button blue">Cancelar</button>
+                                    </footer>
+                                </div>
+                            </div>
+ 
                     </div><!--activity-->
                 </div><!--scroll-->
             </div><!--corpo-da-pag-->
 
         </section>
-    </div> <!--corpo-->
+    </div> <!--corpo-->      
 
-    <script src="/js/emprestimos.js"></script>
+    <script src="/js/editoras.js"></script>
     <script src="/js/main.js"></script>
 
 </body>

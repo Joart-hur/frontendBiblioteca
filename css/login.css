@@ -1,4 +1,3 @@
-
 /* A regra afetará todos os elementos HTML da Página */
 *{
     margin: 0;
@@ -7,18 +6,13 @@
 }
 
 /* A regra @font-face do CSS3 serve para importar fontes (tipografia) externas para nossa página, ele afetará todos os elementos HTML da Página */
-@font-face {
-    font-family: 'Montebello';
-    src: url(Montebello-Regular.ttf)format("truetype"), url(Montebello-Light.otf)format("opentype");
-    font-weight: normal;
-    font-style: normal; 
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 /* A regra para o corpo da Página */
 body{
     width: 100%;
     height: 100%;
-    background: #066b7c;
+    background: #2C383D;
     overflow: hidden;
 }
 
@@ -50,7 +44,7 @@ body{
     font-size: 25px;
     color: rgb(243, 241, 241);
     font-weight: 600;
-    font-family: 'Montebello', Times, serif;
+    font-family: 'Poppins', sans-serif;
 }
 /* Essa regra direciona o formulario dentro da tela de login*/
 .wrapper form{
@@ -73,7 +67,7 @@ body{
     border-radius: 5px;
     border: 1px solid lightgray;
     font-size: 16px;
-    font-family: 'Montebello', Times, serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Essa regra trabalha a organização de elementos, efeitos de sombra, 
@@ -100,7 +94,7 @@ bordas entre outros*/
     color: gray;
     font-size: 17px;
     text-decoration: none;
-    font-family: 'Montebello', Times, serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .wrapper form .pass p:hover{
@@ -118,4 +112,3 @@ bordas entre outros*/
     border: 1px solid lightgray;
     cursor: pointer;
 }
-
